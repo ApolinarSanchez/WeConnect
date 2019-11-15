@@ -17,4 +17,21 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="HomeImage">
+        <item name="android:layout_width">404dp</item>
+        <item name="android:layout_height">607dp</item>
+        <item name="android:layout_marginLeft">-8dp</item>
+        <item name="android:layout_marginTop">-154dp</item>
+    </style>
+
+    <style name="SearchBar">
+        <item name="android:layout_width">359dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:drawableLeft">@drawable/ic_search_black_24dp</item>
+
+
+    </style>
+
+
 </resources>
