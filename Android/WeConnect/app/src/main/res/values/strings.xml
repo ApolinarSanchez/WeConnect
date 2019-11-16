@@ -1,5 +1,4 @@
 <resources>
-<<<<<<< HEAD
     <string name="app_name">Multiple Applications</string>
     <string name="title">Get a Random Number!</string>
     <string name="replacement">Without replacement</string>
@@ -27,8 +26,4 @@
     <string name="share">Share</string>
     <string name="menu_home">Menu</string>
     <string name="sharing_not_available">Sharing Not Available</string>
-=======
-    <string name="app_name">WeConnect</string>
-    <string name="menu_name">WeConnect</string>
->>>>>>> 80654cd367648f4da29086feba0d548ba91dc169
 </resources>

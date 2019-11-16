@@ -4,16 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
     app:startDestination="@id/homeFragment">
-<<<<<<< HEAD
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.android.navigation.HomeFragment"
         android:label="Home" />
-=======
-
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.android.navigation.HomeFragment"
-        android:label="HomeFragment" />
->>>>>>> 80654cd367648f4da29086feba0d548ba91dc169
 </navigation>
