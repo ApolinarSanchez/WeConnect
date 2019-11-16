@@ -36,6 +36,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+<<<<<<< HEAD
         app:srcCompat="@drawable/ic_launcher_background" />
+=======
+        app:srcCompat="@drawable/ic_android_green_24dp" />
+>>>>>>> 80654cd367648f4da29086feba0d548ba91dc169
 
 </androidx.constraintlayout.widget.ConstraintLayout>

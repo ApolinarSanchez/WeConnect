@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * Copyright 2018, The Android Open Source Project
  *
@@ -14,6 +15,8 @@
  * limitations under the License.
  */
 
+=======
+>>>>>>> 80654cd367648f4da29086feba0d548ba91dc169
 package com.example.android.navigation
 
 import android.os.Bundle
