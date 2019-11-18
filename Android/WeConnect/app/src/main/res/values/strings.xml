@@ -25,6 +25,4 @@
     <string name="projects_header">Projects</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="search_bar_hint">Search for projects and people</string>
-    <string name="category_project_background_content_description">background image</string>
 </resources>
