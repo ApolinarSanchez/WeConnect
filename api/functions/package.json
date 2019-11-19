@@ -1,0 +1,43 @@
+{
+  "name": "weconnect-api",
+  "description": "WeConnect API",
+  "scripts": {
+    "test": "killall -9 node; nodemon local-index.js",
+    "lint": "eslint .",
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "busboy": "^0.3.1",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "firebase-admin": "^7.4.0",
+    "firebase-functions": "^2.2.1",
+    "grpc": "^1.20.3",
+    "mime-types": "^2.1.24",
+    "node-cache-promise": "^1.0.0",
+    "underscore": "^1.9.1",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "http": "0.0.0",
+    "nodemon": "^1.19.2",
+    "request": "^2.88.0",
+    "shelljs": "^0.8.3"
+  },
+  "private": true,
+  "engines": {
+    "node": "8"
+  },
+  "keywords": [],
+  "author": "Bijan Fazeli",
+  "license": "ISC"
+}
