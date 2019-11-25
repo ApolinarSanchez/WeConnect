@@ -1,4 +1,5 @@
 <resources>
+<<<<<<< HEAD
     <string name="app_name">WeConnect</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -26,3 +27,33 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
+=======
+    <string name="app_name">Multiple Applications</string>
+    <string name="title">Get a Random Number!</string>
+    <string name="replacement">Without replacement</string>
+    <string name="button_name">GET NUMBER</string>
+    <string name="roll">Roll</string>
+    <string name="dice_name">Dice Roller</string>
+    <string name="cal_name">Tip Calculator</string>
+    <string name="random_name">Random Number Generator</string>
+    <string name="tip_hint">Bill</string>
+    <string name="tip_15">15%</string>
+    <string name="tip_18">18%</string>
+    <string name="tip_20">20%</string>
+    <string name="cal_button">Calculate</string>
+    <string name="about_text">Android Trivia will help remind you of important concepts you have learned and will learn in Android development.\n\nConsider modifying the questions and graphics to make this game your own!</string>
+    <string name="rules_text">Select the answer from the options given. Each time you get an answer correct, you advance to the next question.\n\nIf you get the answer wrong, your game ends! You can return to the title screen using up or back from within the game screen, and this will also end your game.</string>
+    <string name="rules">Rules</string>
+    <string name="about">About</string>
+    <string name="trivia_hint">Trivia Hint</string>
+    <string name="title_android_trivia_question">Android Trivia (%1$d/%2$d)</string>
+    <string name="title_about_trivia">About Trivia</string>
+    <string name="title_trivia_rules">Trivia Rules</string>
+    <string name="share_success_text">I mastered #UdacityAndroidTrivia with %1$d/%2$d correct questions!</string>
+    <string name="submit_button">Submit</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="share">Share</string>
+    <string name="menu_home">Menu</string>
+    <string name="sharing_not_available">Sharing Not Available</string>
+</resources>
+>>>>>>> 612cd12afe0e707b793dcfa3787c378ceb14a72b

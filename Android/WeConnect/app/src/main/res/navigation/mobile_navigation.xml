@@ -2,10 +2,11 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
 
     <fragment
+<<<<<<< HEAD
         android:id="@+id/nav_home"
         android:name="com.cs5540.weconnect.homepage.HomeFragment"
         android:label="@string/menu_home"
@@ -41,4 +42,9 @@
         android:name="com.cs5540.weconnect.ui.send.SendFragment"
         android:label="@string/menu_send"
         tools:layout="@layout/fragment_send" />
+=======
+        android:id="@+id/homeFragment"
+        android:name="com.example.android.navigation.HomeFragment"
+        android:label="HomeFragment" />
+>>>>>>> 612cd12afe0e707b793dcfa3787c378ceb14a72b
 </navigation>
