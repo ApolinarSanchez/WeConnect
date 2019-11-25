@@ -19,7 +19,7 @@ import com.cs5540.weconnect.databinding.FragmentHomeBinding
 /**
  * A simple [Fragment] subclass.
  */
-class HomeFragment : Fragment() {
+class  HomeFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
