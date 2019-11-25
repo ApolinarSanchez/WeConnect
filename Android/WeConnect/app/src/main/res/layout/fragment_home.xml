@@ -47,7 +47,7 @@
                 android:layout_alignBaseline="@id/home_image"
                 app:srcCompat="@android:color/white" />
 
-            <EditText
+            <SearchView
                 android:id="@+id/search_bar"
                 android:layout_width="359dp"
                 android:layout_height="48dp"
