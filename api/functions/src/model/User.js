@@ -1,9 +1,10 @@
-const uuidv1 = require('uuid/v1');
+const uuid = require('uuid');
 const _ = require('lodash');
 
 class User {
   constructor(props) {
     this.userId = props.userId;
+    this.firebaseUserUID = props.firebaseUserUID;
     this.email = props.email;
     this.firstName = props.firstName;
     this.lastName = props.lastName;
@@ -29,10 +30,10 @@ class User {
   }
 
   createBody() {
-    return _.extend({ 
-      userId: uuidv1(),
-      createdAt: new Date().toISOString()
-    }, _.omit(this, _.isUndefined))
+    return _.extend({
+      userId: uuid.v1(),
+      createdAt: new Date().toISOString(),
+    }, _.omitBy(this, _.isUndefined))
   }
 
   updateBody() {
