@@ -10,11 +10,11 @@ function devLocal() {
 
     // MARK: Resources
     new (require('./src/resource/UserResource'))(services);
-    new (require('./src/resource/ProjectResource'))(services);
-    new (require('./src/resource/MessageResource'))(services);
-    new (require('./src/resource/TagResource'))(services);
-    new (require('./src/resource/ConfigResource'))(services);
-    new (require('./src/resource/CategoryResource'))(services);
+    // new (require('./src/resource/ProjectResource'))(services);
+    // new (require('./src/resource/MessageResource'))(services);
+    // new (require('./src/resource/TagResource'))(services);
+    // new (require('./src/resource/ConfigResource'))(services);
+    // new (require('./src/resource/CategoryResource'))(services);
 
     app.listen(3000, () => {
         console.log('Example app listening on port 3000.')
