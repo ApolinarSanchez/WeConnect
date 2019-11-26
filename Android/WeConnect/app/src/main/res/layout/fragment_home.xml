@@ -43,8 +43,8 @@
                 android:id="@+id/category_project_background"
                 android:layout_width="fill_parent"
                 android:layout_height="500dp"
-                android:layout_marginTop="300dp"
                 android:layout_alignBaseline="@id/home_image"
+                android:layout_marginTop="300dp"
                 app:srcCompat="@android:color/white" />
 
             <SearchView
@@ -60,212 +60,17 @@
                 android:hint="Search for projects and people"
                 android:drawablePadding="10dp" />
 
-            <ImageButton
-                android:id="@+id/first_category_image"
-                android:layout_width="70dp"
-                android:layout_height="75dp"
-                android:layout_alignStart="@id/category_project_background"
-                android:layout_marginTop="350dp"
-                android:layout_marginLeft="42dp"
-                android:src="@drawable/ic_android"
-                android:background="@drawable/rounded_imagebutton"
-                app:srcCompat="@android:color/background_dark" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/category_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignTop="@+id/category_project_background"
+                android:layout_alignBottom="@+id/home_image"
+                android:layout_marginTop="23dp"
+                android:layout_marginBottom="-60dp" />
 
-            <TextView
-                android:id="@+id/first_category"
-                android:layout_width="70dp"
-                android:layout_height="32dp"
-                android:layout_below="@id/first_category_image"
-                android:layout_alignStart="@id/first_category_image"
-                android:layout_marginTop="12dp"
-                android:gravity="center_horizontal"
-                android:text="@string/first_category_text"
-                android:textSize="12dp"/>
 
-            <ImageButton
-                android:id="@+id/second_category_image"
-                android:layout_width="70dp"
-                android:layout_height="75dp"
-                android:layout_alignStart="@id/first_category_image"
-                android:layout_marginTop="350dp"
-                android:layout_marginLeft="84dp"
-                android:src="@drawable/kotlin"
-                android:background="@drawable/rounded_imagebutton"
-                app:srcCompat="@android:color/background_dark" />
-
-            <TextView
-                android:id="@+id/second_category"
-                android:layout_width="70dp"
-                android:layout_height="32dp"
-                android:layout_below="@id/second_category_image"
-                android:layout_alignStart="@id/second_category_image"
-                android:layout_marginTop="12dp"
-                android:gravity="center_horizontal"
-                android:text="@string/second_category_text"
-                android:textSize="12dp"/>
-
-            <ImageButton
-                android:id="@+id/third_category_image"
-                android:layout_width="70dp"
-                android:layout_height="75dp"
-                android:layout_alignStart="@id/second_category_image"
-                android:layout_marginTop="350dp"
-                android:layout_marginLeft="84dp"
-                android:background="@drawable/rounded_imagebutton"
-                android:src="@drawable/java"
-                app:srcCompat="@android:color/background_dark" />
-
-            <TextView
-                android:id="@+id/third_category"
-                android:layout_width="70dp"
-                android:layout_height="32dp"
-                android:layout_below="@id/third_category_image"
-                android:layout_alignStart="@id/third_category_image"
-                android:layout_marginTop="12dp"
-                android:gravity="center_horizontal"
-                android:text="@string/third_category_text"
-                android:textSize="12dp"/>
-
-            <ImageButton
-                android:id="@+id/fourth_category_image"
-                android:layout_width="70dp"
-                android:layout_height="75dp"
-                android:layout_alignStart="@id/third_category_image"
-                android:layout_marginTop="350dp"
-                android:layout_marginLeft="84dp"
-                android:background="@drawable/rounded_imagebutton"
-                android:src="@drawable/database"
-                app:srcCompat="@android:color/background_dark" />
-
-            <TextView
-                android:id="@+id/fourth_category"
-                android:layout_width="70dp"
-                android:layout_height="32dp"
-                android:layout_below="@id/fourth_category_image"
-                android:layout_alignStart="@id/fourth_category_image"
-                android:layout_marginTop="12dp"
-                android:gravity="center_horizontal"
-                android:text="@string/fourth_category_text"
-                android:textSize="12dp"/>
-
-            <ImageButton
-                android:id="@+id/fifth_category_image"
-                android:layout_width="70dp"
-                android:layout_height="75dp"
-                android:layout_alignStart="@id/first_category_image"
-                android:layout_below="@+id/first_category"
-                android:src="@drawable/ic_movie_black_24dp"
-                android:background="@drawable/rounded_imagebutton"
-                app:srcCompat="@android:color/background_dark" />
-
-            <TextView
-                android:id="@+id/fifth_category"
-                android:layout_width="70dp"
-                android:layout_height="32dp"
-                android:layout_below="@id/fifth_category_image"
-                android:layout_alignStart="@id/first_category_image"
-                android:layout_marginTop="12dp"
-                android:gravity="center_horizontal"
-                android:text="@string/fifth_category_text"
-                android:textSize="12dp"/>
-
-            <ImageButton
-                android:id="@+id/sixth_category_image"
-                android:layout_width="70dp"
-                android:layout_height="75dp"
-                android:layout_alignStart="@id/second_category_image"
-                android:layout_below="@+id/second_category"
-                android:src="@drawable/ic_music_note_black_75dp"
-                android:background="@drawable/rounded_imagebutton"
-                app:srcCompat="@android:color/background_dark" />
-
-            <TextView
-                android:id="@+id/sixth_category"
-                android:layout_width="70dp"
-                android:layout_height="32dp"
-                android:layout_below="@id/sixth_category_image"
-                android:layout_alignStart="@id/sixth_category_image"
-                android:layout_marginTop="12dp"
-                android:gravity="center_horizontal"
-                android:text="@string/sixth_category_text"
-                android:textSize="12dp"/>
-
-            <ImageButton
-                android:id="@+id/seventh_category_image"
-                android:layout_width="70dp"
-                android:layout_height="75dp"
-                android:layout_alignStart="@id/third_category_image"
-                android:layout_below="@+id/third_category"
-                android:src="@drawable/ic_cake_black_75dp"
-                android:background="@drawable/rounded_imagebutton"
-                app:srcCompat="@android:color/background_dark" />
-
-            <TextView
-                android:id="@+id/seventh_category"
-                android:layout_width="70dp"
-                android:layout_height="32dp"
-                android:layout_below="@id/seventh_category_image"
-                android:layout_alignStart="@id/seventh_category_image"
-                android:layout_marginTop="12dp"
-                android:gravity="center_horizontal"
-                android:text="@string/seventh_category_text"
-                android:textSize="12dp"/>
-
-            <ImageButton
-                android:id="@+id/eighth_category_image"
-                android:layout_width="70dp"
-                android:layout_height="75dp"
-                android:layout_alignStart="@id/fourth_category_image"
-                android:layout_below="@+id/fourth_category"
-                android:src="@drawable/ic_palette_75dp"
-                android:background="@drawable/rounded_imagebutton"
-                app:srcCompat="@android:color/background_dark" />
-
-            <TextView
-                android:id="@+id/eighth_category"
-                android:layout_width="70dp"
-                android:layout_height="32dp"
-                android:layout_below="@id/eighth_category_image"
-                android:layout_alignStart="@id/eighth_category_image"
-                android:layout_marginTop="12dp"
-                android:gravity="center_horizontal"
-                android:text="@string/eighth_category_text"/>
-
-            <View
-                android:id="@+id/category_project_divider"
-                android:layout_width="340dp"
-                android:layout_height="1dp"
-                android:layout_below="@+id/eighth_category"
-                android:layout_alignStart="@id/first_category_image"
-                android:layout_marginTop="19dp"
-                android:background="@android:color/darker_gray"/>
-
-            <TextView
-                android:id="@+id/projects_header"
-                android:layout_width="wrap_content"
-                android:layout_height="33dp"
-                android:layout_below="@id/category_project_divider"
-                android:layout_alignStart="@id/first_category_image"
-                android:layout_marginTop="18dp"
-                android:gravity="left"
-                android:text="@string/projects_header"
-                android:textSize="24dp"
-                android:textColor="#000000"
-                />
-
-            <View
-                android:id="@+id/project_view"
-                android:layout_width="341dp"
-                android:layout_height="399dp"
-                android:layout_alignStart="@id/first_category_image"
-                android:layout_below="@+id/projects_header"
-                android:layout_marginTop="13dp"
-                android:layout_marginBottom="13dp"
-                android:background="@drawable/rounded_project_view"
-                app:srcCompat="@android:color/background_light"
-                />
-
-<!--            <ImageView-->
+            <!--            <ImageView-->
 <!--                android:id="@+id/project_image"-->
 <!--                android:layout_width="341dp"-->
 <!--                android:layout_height="200dp"-->

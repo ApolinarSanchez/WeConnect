@@ -1,6 +1,5 @@
 package com.cs5540.weconnect.homepage
 
-
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,10 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 import com.cs5540.weconnect.R
 import com.cs5540.weconnect.databinding.FragmentHomeBinding
@@ -28,6 +30,18 @@ class  HomeFragment : Fragment() {
 
         val binding = DataBindingUtil.inflate<FragmentHomeBinding>(inflater,
             R.layout.fragment_home, container, false)
+
+        val rv = binding.categoryView
+        rv.layoutManager = LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
+        val cats = ArrayList<CategoryModel>()
+        cats.add(CategoryModel("JAVA"))
+        cats.add(CategoryModel("PYTHON"))
+        cats.add(CategoryModel("JAVA"))
+        cats.add(CategoryModel("JAVASCRIPT"))
+
+        var adapter = CategoryAdapter(cats)
+        rv.adapter = adapter
+
 
         binding.searchBar.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
             android.widget.SearchView.OnQueryTextListener {
@@ -48,6 +62,7 @@ class  HomeFragment : Fragment() {
                 return true
             }
         })
+
         // Inflate the layout for this fragment
         return binding.root
     }
