@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -32,15 +33,42 @@ class  HomeFragment : Fragment() {
             R.layout.fragment_home, container, false)
 
         val rv = binding.categoryView
-        rv.layoutManager = LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
+        rv.layoutManager = GridLayoutManager(this.context,4)
         val cats = ArrayList<CategoryModel>()
-        cats.add(CategoryModel("JAVA"))
-        cats.add(CategoryModel("PYTHON"))
-        cats.add(CategoryModel("JAVA"))
-        cats.add(CategoryModel("JAVASCRIPT"))
+        cats.add(CategoryModel("JAVA",R.drawable.java))
+        cats.add(CategoryModel("KOTLIN",R.drawable.kotlin))
+        cats.add(CategoryModel("Python",R.drawable.java))
+        cats.add(CategoryModel("C++",R.drawable.java))
+        cats.add(CategoryModel("C",R.drawable.kotlin))
+        cats.add(CategoryModel("RUBY",R.drawable.kotlin))
+        cats.add(CategoryModel("C#",R.drawable.kotlin))
+        cats.add(CategoryModel("HTML",R.drawable.kotlin))
+        cats.add(CategoryModel("JAVA",R.drawable.java))
+        cats.add(CategoryModel("KOTLIN",R.drawable.kotlin))
+        cats.add(CategoryModel("Python",R.drawable.java))
+        cats.add(CategoryModel("C++",R.drawable.java))
+        cats.add(CategoryModel("C",R.drawable.kotlin))
+        cats.add(CategoryModel("RUBY",R.drawable.kotlin))
+        cats.add(CategoryModel("C#",R.drawable.kotlin))
+        cats.add(CategoryModel("HTML",R.drawable.kotlin))
 
         var adapter = CategoryAdapter(cats)
         rv.adapter = adapter
+
+//        val rv2 = binding.projectView
+//        rv2.layoutManager = LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
+//        val projects = ArrayList<ProjectModel>()
+//        val paragraph = "Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
+//                " Paulum, cum regem Persem captum adduceret, eodem flumine invectio? Itaque " +
+//                "hic ipse iam pridem est reiectus; Cur id non ita fit? Hoc loco tenere se Triarius " +
+//                "non potuit. Duo Reges: constructio interrete. Quamquam te quidem video minime esse " +
+//                "deterritum. Praetereo multos, in bis doctum hominem et suavem, Hieronymum, quem iam " +
+//                "cur Peripateticum appellem nescio. Neque solum ea communia, verum etiam paria esse " +
+//                "dixerunt."
+//        projects.add(ProjectModel("Project1","@drawable/java.png",paragraph))
+//        projects.add(ProjectModel("Project2","@drawable/java.png",paragraph))
+//        var adapter2 = ProjectAdaptor(projects)
+//        rv2.adapter = adapter2
 
 
         binding.searchBar.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
