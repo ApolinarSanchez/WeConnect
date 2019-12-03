@@ -6,9 +6,9 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
+    <string name="menu_profile">Profile</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
@@ -23,6 +23,12 @@
     <string name="seventh_category_text">Event Planning</string>
     <string name="eighth_category_text">Art</string>
     <string name="projects_header">Projects</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_bar_hint">Search for projects and people</string>
+    <string name="user_name">We User</string>
+    <string name="user_position">UI/UX Designer</string>
+    <string name="bio_title">Bio</string>
+    <string name="bio_description">Lorem ipsum, or lipsum as it is sometimes known,
+        is dummy text used in laying out print, graphic or web designs.
+        The passage is attributed to an unknown typesetter in the
+        15th century who is thought to have scrambled.</string>
 </resources>
