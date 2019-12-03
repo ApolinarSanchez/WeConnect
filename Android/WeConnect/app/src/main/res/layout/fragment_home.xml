@@ -78,7 +78,7 @@
                 android:layout_below="@id/search_bar_card"
                 android:layout_marginStart="36dp"
                 android:layout_marginTop="-109dp"
-                card_view:cardCornerRadius="4dp">
+                card_view:cardCornerRadius="10dp">
 
                 <ImageButton
                     android:id="@+id/first_category_image"
