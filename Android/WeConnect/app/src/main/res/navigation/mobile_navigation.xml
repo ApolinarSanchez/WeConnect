@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.cs5540.weconnect.homepage.HomeFragment"
+        android:name="com.cs5540.weconnect.ui.homepage.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
