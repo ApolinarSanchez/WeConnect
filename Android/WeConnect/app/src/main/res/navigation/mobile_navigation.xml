@@ -4,44 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/nav_home">
-
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.cs5540.weconnect.homepage.HomeFragment"
+        android:name="com.cs5540.weconnect.ui.homepage.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
-
-
     <fragment
         android:id="@+id/nav_myprojects"
         android:name="com.cs5540.weconnect.ui.myprojects.MyProjectsFragment"
         android:label="@string/menu_myprojects"
         tools:layout="@layout/fragment_myprojects" />
-
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.cs5540.weconnect.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
-
     <fragment
         android:id="@+id/nav_profile"
         android:name="com.cs5540.weconnect.ui.profile.ProfileFragment"
         android:label="@string/menu_profile"
         tools:layout="@layout/fragment_profile" />
-
     <fragment
         android:id="@+id/nav_tools"
         android:name="com.cs5540.weconnect.ui.tools.ToolsFragment"
         android:label="@string/menu_tools"
         tools:layout="@layout/fragment_tools" />
-
     <fragment
         android:id="@+id/nav_share"
         android:name="com.cs5540.weconnect.ui.share.ShareFragment"
         android:label="@string/menu_share"
         tools:layout="@layout/fragment_share" />
-
     <fragment
         android:id="@+id/nav_send"
         android:name="com.cs5540.weconnect.ui.send.SendFragment"

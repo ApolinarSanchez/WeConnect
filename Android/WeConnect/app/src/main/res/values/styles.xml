@@ -1,5 +1,4 @@
 <resources>
-
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
@@ -7,16 +6,12 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
     <style name="ProfilePic">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
@@ -24,25 +19,21 @@
         <item name="android:layout_marginLeft">45dp</item>
         <item name="android:layout_marginRight">45dp</item>
     </style>
-
     <style name="HomeImage">
         <item name="android:layout_width">404dp</item>
         <item name="android:layout_height">607dp</item>
         <item name="android:layout_marginTop">-154dp</item>
     </style>
-
     <style name="SearchBar">
         <item name="android:layout_width">359dp</item>
         <item name="android:layout_height">48dp</item>
         <item name="android:background">@android:color/white</item>
         <item name="android:drawableLeft">@drawable/ic_search</item>
     </style>
-
     <style name="category_card">
         <item name="android:layout_width">70dp</item>
         <item name="android:layout_height">75dp</item>
     </style>
-
     <style name="pro_pic_card">
         <item name="android:layout_width">200dp</item>
         <item name="android:layout_height">200dp</item>
@@ -51,7 +42,6 @@
         <item name="android:layout_marginLeft">45dp</item>
         <item name="android:layout_marginRight">45dp</item>
     </style>
-
     <style name="category_image">
         <item name="android:layout_width">70dp</item>
         <item name="android:layout_height">75dp</item>

@@ -13,33 +13,15 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-
-
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:context=".homepage.HomeFragment">
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:context=".homepage.HomeFragment">
-
-            <ImageView
-                android:id="@+id/home_image"
-                style="@style/HomeImage"
-                android:importantForAccessibility="no"
-                android:src="@drawable/bartender" />
-
-
-            <ImageView
-                android:id="@+id/category_project_background"
+        tools:context=".ui.homepage.HomeFragment">
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="610dp"
                 android:layout_below="@id/home_image"
