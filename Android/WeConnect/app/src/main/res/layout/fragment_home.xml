@@ -15,45 +15,80 @@
   -->
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="categoryViewModel"
+            type="com.cs5540.weconnect.ui.homepage.CategoryViewModel" />
+    </data>
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:context=".ui.homepage.HomeFragment">
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 tools:context=".ui.homepage.HomeFragment">
+
                 <ImageView
                     android:id="@+id/home_image"
-                    style="@style/HomeImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="452dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
                     android:src="@drawable/bartender" />
-                <ImageView
-                    android:id="@+id/category_project_background"
-                    android:layout_width="fill_parent"
-                    android:layout_height="500dp"
-                    android:layout_alignBaseline="@id/home_image"
-                    android:layout_marginTop="300dp"
-                    app:srcCompat="@android:color/white" />
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/category_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/category_project_background"
-                    android:layout_alignBottom="@+id/home_image"
-                    android:layout_marginTop="27dp"
-                    android:layout_marginBottom="-27dp"
+                    android:layout_below="@+id/home_image"
+                    android:layout_marginTop="45dp"
                     android:orientation="horizontal"
-                    android:overScrollMode="never" />
+                    android:overScrollMode="never"
+                    app:categoryData="@{categoryViewModel.categories}"
+                    />
+
+                <View
+                    android:id="@+id/home_divider"
+                    android:layout_width="340dp"
+                    android:layout_height="1dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/category_view"
+                    android:layout_marginTop="19dp"
+                    android:background="@android:color/darker_gray"/>
+
+                <TextView
+                    android:id="@+id/projects_header"
+                    android:layout_width="340dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/home_divider"
+                    android:layout_marginTop="18dp"
+                    android:layout_alignStart="@+id/category_view"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="left"
+                    android:text="Projects"
+                    android:textSize="24sp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"/>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/projects_card"
+                    android:layout_width="350dp"
+                    android:layout_height="675dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="13dp"
+                    android:layout_below="@+id/projects_header"
+                    android:layout_alignStart="@+id/category_view"
+                    android:layout_marginBottom="10dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="6dp">
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/project_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/category_view"
-                    android:layout_alignBottom="@+id/category_view"
-                    android:layout_marginTop="38dp"
-                    android:layout_marginBottom="-255dp" />
+                    android:layout_width="350dp"
+                    android:layout_height="675dp"
+                    android:background="@android:color/darker_gray"/>
+                </androidx.cardview.widget.CardView>
+
             </RelativeLayout>
     </ScrollView>
 </layout>
