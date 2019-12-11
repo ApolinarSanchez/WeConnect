@@ -1,37 +1,31 @@
 const uuid = require("uuid");
 const _ = require("lodash");
 
-class User {
+class Category {
   constructor(props) {
-    this.userId = props.userId;
-    this.firebaseUserUID = props.firebaseUserUID;
-    this.email = props.email;
-    this.firstName = props.firstName;
-    this.lastName = props.lastName;
-    this.userName = props.userName;
-    this.profileImageUrl = props.profileImageUrl;
+    this.id = props.id;
+    this.name = props.name;
     this.originalImage = props.originalImage;
     this.croppedImage = props.croppedImage;
     this.originalImageId = props.originalImageId;
     this.croppedImageId = props.croppedImageId;
-    this.profileImageUrl = props.profileImageUrl;
   }
 
   // search user: 58 x 58 px
   // profile user: 89 x 89 px
 
   static collection() {
-    return "users";
+    return "categories";
   }
 
   static mediaKeyPaths() {
-    return ["profileImageUrl"];
+    return ["categoryImageUrl"];
   }
 
   createBody() {
     return _.extend(
       {
-        userId: uuid.v1(),
+        id: uuid.v1(),
         createdAt: new Date().toISOString()
       },
       _.omitBy(this, _.isUndefined)
@@ -47,4 +41,4 @@ class User {
   }
 }
 
-exports.User = User;
+exports.Category = Category;
