@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.cs5540.weconnect.databinding.CategoryItemLayoutBinding
+
 class CategoryAdapter : ListAdapter<Category, CategoryAdapter.ViewHolder>(DiffCallback) {
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val category = getItem(position)

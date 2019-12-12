@@ -20,6 +20,9 @@
         <variable
             name="categoryViewModel"
             type="com.cs5540.weconnect.ui.homepage.CategoryViewModel" />
+        <variable
+            name="projectViewModel"
+            type="com.cs5540.weconnect.ui.projects.ProjectViewModel" />
     </data>
     <ScrollView
         android:layout_width="wrap_content"
@@ -57,7 +60,6 @@
                     android:layout_below="@+id/category_view"
                     android:layout_marginTop="19dp"
                     android:background="@android:color/darker_gray"/>
-
                 <TextView
                     android:id="@+id/projects_header"
                     android:layout_width="340dp"
@@ -86,7 +88,8 @@
                     android:id="@+id/project_view"
                     android:layout_width="350dp"
                     android:layout_height="675dp"
-                    android:background="@android:color/darker_gray"/>
+                    android:background="@android:color/darker_gray"
+                    app:projectData="@{projectViewModel.projects}"/>
                 </androidx.cardview.widget.CardView>
             </RelativeLayout>
     </ScrollView>
