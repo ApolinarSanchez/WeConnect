@@ -6,6 +6,7 @@ import com.squareup.moshi.Json
 data class Project(
     val imageId:Int= R.drawable.kotlin,
     val title: String,
+    val categoryId: String,
     @Json(name="id") val projectId: String,
     val description : String
 

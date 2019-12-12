@@ -6,9 +6,12 @@ import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterF
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import kotlinx.coroutines.Deferred
+import retrofit2.Callback
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
+import retrofit2.http.Query
 
 private const val BASE_URL = "https://us-central1-we-connect-stage.cloudfunctions.net/resource/"
 
@@ -27,6 +30,10 @@ interface WeConnectApiService {
             Deferred<List<Category>>
     @GET("project")
     fun getProjects():
+            Deferred<List<Project>>
+    @GET("project/{categoryId}/category")
+    fun getProjectsByCategory(
+        @Path("categoryId") categoryId : String):
             Deferred<List<Project>>
 }
 

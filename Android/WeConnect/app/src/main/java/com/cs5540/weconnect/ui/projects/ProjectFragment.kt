@@ -36,6 +36,7 @@ class  ProjectFragment : Fragment(){
 
         // Inflate the layout for this fragment
         // Give binding access to ProjectViewModel
+        projectViewModel.getWeConnectProjectsInCategory("Hemw51kB91Pe6nbrB99n")
         binding.projectViewModel = projectViewModel
 
         val projectRecycler = binding.projectView
