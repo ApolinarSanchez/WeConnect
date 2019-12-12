@@ -11,8 +11,9 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_nav_home_to_projectFragment"
-            app:destination="@id/projectFragment" />
+            app:destination="@id/nav_project" />
     </fragment>
+
     <fragment
         android:id="@+id/nav_myprojects"
         android:name="com.cs5540.weconnect.ui.myprojects.MyProjectsFragment"
@@ -44,8 +45,7 @@
         android:label="@string/menu_send"
         tools:layout="@layout/fragment_send" />
     <fragment
-        android:id="@+id/projectFragment"
+        android:id="@+id/nav_project"
         android:name="com.cs5540.weconnect.ui.projects.ProjectFragment"
-        android:label="fragment_project"
-        tools:layout="@layout/fragment_project" />
+        android:label="ProjectFragment" />
 </navigation>

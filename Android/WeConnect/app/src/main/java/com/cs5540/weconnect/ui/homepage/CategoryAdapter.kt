@@ -3,10 +3,12 @@ package com.cs5540.weconnect.ui.homepage
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.cs5540.weconnect.databinding.CategoryItemLayoutBinding
-class CategoryAdapter(val clickListener: CategoryListener) : ListAdapter<Category, CategoryAdapter.ViewHolder>(DiffCallback) {
+class CategoryAdapter(val clickListener: CategoryAdapter.CategoryListener) : ListAdapter<Category, CategoryAdapter.ViewHolder>(DiffCallback) {
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val category = getItem(position)
         holder.bind(category, clickListener)

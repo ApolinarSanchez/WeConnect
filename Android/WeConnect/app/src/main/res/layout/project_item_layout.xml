@@ -1,11 +1,16 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="project"
+            type="com.cs5540.weconnect.ui.projects.Project" />
+    </data>
+<LinearLayout
     android:orientation="vertical"
     android:layout_width="340dp"
     android:layout_height="475dp"
-    android:layout_gravity="center"
-    >
-
+    android:layout_gravity="center">
     <androidx.cardview.widget.CardView
         android:layout_width="340dp"
         android:layout_height="450dp"
@@ -24,6 +29,7 @@
                 android:layout_height="200dp"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
+                android:src="@{project.imageId}"
                 android:gravity="center"
                 app:srcCompat="@drawable/kotlin" />
             <TextView
@@ -35,12 +41,15 @@
                 android:layout_marginBottom="2dp"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:text="@{project.title}"
                 android:textColor="@android:color/black"/>
             <TextView
                 android:id="@+id/project_description"
                 android:layout_width="wrap_content"
                 android:layout_height="161dp"
+                android:text="@{project.description}"
                 android:layout_marginBottom="10dp"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>
+</layout>

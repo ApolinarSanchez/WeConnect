@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cs5540.weconnect.R
 import com.cs5540.weconnect.databinding.FragmentHomeBinding
+import com.cs5540.weconnect.ui.projects.ProjectViewModel
 
 
 class  HomeFragment : Fragment() {
@@ -24,14 +25,19 @@ class  HomeFragment : Fragment() {
     private val categoryViewModel: CategoryViewModel by lazy {
         ViewModelProviders.of(this).get(CategoryViewModel::class.java)
     }
+    private val projectViewModel: ProjectViewModel by lazy {
+        ViewModelProviders.of(this).get(ProjectViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View?{
+    ): View? {
 
-        val binding = DataBindingUtil.inflate<FragmentHomeBinding>(inflater,
-            R.layout.fragment_home, container, false)
+        val binding = DataBindingUtil.inflate<FragmentHomeBinding>(
+            inflater,
+            R.layout.fragment_home, container, false
+        )
 
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
         binding.setLifecycleOwner(this)
@@ -55,35 +61,28 @@ class  HomeFragment : Fragment() {
        categoryRecycler.layoutManager = manager
 
 
+        categoryRecycler.layoutManager = manager
+
+        // Inflate the layout for this fragment
+        // Give binding access to ProjectViewModel
+        binding.projectViewModel = projectViewModel
 
         val projectRecycler = binding.projectView
-        projectRecycler.layoutManager = LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
-        val projects = ArrayList<Project>()
-        val paragraph = "Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
-                " Paulum, cum regem Persem captum adduceret, eodem flumine invectio? Itaque " +
-                "hic ipse iam pridem est reiectus; Cur id non ita fit? Hoc loco tenere se Triarius " +
-                "non potuit. Duo Reges: constructio interrete. Quamquam te quidem video minime esse " +
-                "deterritum. Praetereo multos, in bis doctum hominem et suavem, Hieronymum, quem iam " +
-                "cur Peripateticum appellem nescio. Neque solum ea communia, verum etiam paria esse " +
-                "dixerunt."
-        projects.add(Project("Project1",R.drawable.ic_cake,paragraph))
-        projects.add(Project("Project2",R.drawable.ic_movie,paragraph))
-        projects.add(Project("Project3",R.drawable.ic_android,paragraph))
-        projects.add(Project("Project4",R.drawable.ic_launcher_background,paragraph))
-        projects.add(Project("Project5",R.drawable.ic_launcher_background,paragraph))
-        projects.add(Project("Project6",R.drawable.ic_launcher_background,paragraph))
-        projects.add(Project("Project7",R.drawable.ic_launcher_background,paragraph))
-        projects.add(Project("Project8",R.drawable.ic_launcher_background,paragraph))
-        var adapter2 = ProjectAdapter(projects)
-        projectRecycler.adapter = adapter2
 
-        binding.categoryView.adapter = CategoryAdapter(CategoryAdapter.CategoryListener { categoryId->
+
+        val manager2: LinearLayoutManager =
+            LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
+
+        projectRecycler.layoutManager = manager2
+
+
+    binding.categoryView.adapter = CategoryAdapter(CategoryAdapter.CategoryListener { categoryId->
 //            Toast.makeText(context, "${categoryId}", Toast.LENGTH_LONG).show()
-            categoryViewModel.onCategoryClicked(categoryId)
-        })
-        // Inflate the layout for this fragment
+        categoryViewModel.onCategoryClicked(categoryId)
+    })
+        binding.projectView.adapter = ProjectAdapter()
+
+
         return binding.root
     }
-
-
 }
