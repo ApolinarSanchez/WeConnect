@@ -13,20 +13,16 @@ class ProjectViewModel : ViewModel() {
     private val _projects= MutableLiveData<List<Project>>()
     val projects : LiveData<List<Project>>
         get() = _projects
-
     private var projectViewModelJob = Job()
     private val coroutineScope = CoroutineScope(
         projectViewModelJob + Dispatchers.Main)
-
-
     init {
         getWeConnectProjects()
     }
-
     /**
      * Sets the value of the status LiveData to the WeConnect projects.
      */
-    private fun getWeConnectProjects() {
+    private fun getWeConnectProjects(){
         coroutineScope.launch {
             var getProjectsDeferred = WeConnectApi.retrofitService.getProjects()
             try {
@@ -36,7 +32,6 @@ class ProjectViewModel : ViewModel() {
             }
         }
     }
-
     override fun onCleared() {
         super.onCleared()
         projectViewModelJob.cancel()

@@ -53,23 +53,21 @@ class  HomeFragment : Fragment() {
 
         categoryRecycler.layoutManager = manager
         binding.categoryView.adapter = CategoryAdapter()
-////////////////////
 
         // Inflate the layout for this fragment
-        // Give binding access to CategoryViewModel
+        // Give binding access to ProjectViewModel
         binding.projectViewModel = projectViewModel
 
         val projectRecycler = binding.projectView
 
-        val manager2: GridLayoutManager = GridLayoutManager(
-            this.context, 2,
-            GridLayoutManager.HORIZONTAL, false
-        )
+        val manager2: LinearLayoutManager =
+            LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
 
         projectRecycler.layoutManager = manager2
 
 
         binding.projectView.adapter = ProjectAdapter()
+
 
         return binding.root
     }

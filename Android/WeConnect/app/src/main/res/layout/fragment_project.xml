@@ -22,26 +22,27 @@
             type="com.cs5540.weconnect.ui.projects.ProjectViewModel" />
     </data>
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         tools:context=".ui.projects.ProjectFragment">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:context=".ui.homepage.HomeFragment">
+            android:layout_height="match_parent">
             <androidx.cardview.widget.CardView
-                android:id="@+id/cat_projects_card"
+                android:id="@+id/projects_card"
                 android:layout_width="350dp"
                 android:layout_height="675dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="13dp"
+                android:layout_below="@+id/projects_header"
+                android:layout_alignStart="@+id/category_view"
                 android:layout_marginBottom="10dp"
                 app:cardCornerRadius="6dp"
                 app:cardElevation="6dp">
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/project_view"
-                    android:layout_width="350dp"
-                    android:layout_height="675dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:background="@android:color/darker_gray"
                     app:projectData="@{projectViewModel.projects}"/>
             </androidx.cardview.widget.CardView>
