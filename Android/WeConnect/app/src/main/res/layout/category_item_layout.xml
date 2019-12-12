@@ -6,6 +6,9 @@
             <variable
                 name="category"
                 type="com.cs5540.weconnect.ui.homepage.Category" />
+            <variable
+                name="clickListener"
+                type="com.cs5540.weconnect.ui.homepage.CategoryAdapter.CategoryListener" />
         </data>
 <LinearLayout
     android:layout_width="wrap_content"
@@ -16,7 +19,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:onClick="@{() -> clickListener.onClick(category)}">
 
         <androidx.cardview.widget.CardView
             android:layout_width="70dp"

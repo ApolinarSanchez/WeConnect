@@ -6,11 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
 import com.cs5540.weconnect.R
 import com.cs5540.weconnect.databinding.FragmentHomeBinding
 import com.cs5540.weconnect.ui.projects.ProjectViewModel
@@ -46,13 +47,21 @@ class  HomeFragment : Fragment() {
 
         val categoryRecycler = binding.categoryView
 
-        val manager: GridLayoutManager = GridLayoutManager(
-            this.context, 2,
-            GridLayoutManager.HORIZONTAL, false
-        )
+        categoryViewModel.navigateToProjects.observe(this, Observer {category ->
+            category?.let {
+                this.findNavController().navigate(
+                    R.id.action_nav_home_to_projectFragment)
+
+                categoryViewModel.onProjectsNavigated()
+            }
+        })
+        val manager : GridLayoutManager= GridLayoutManager(this.context, 2,
+                                        GridLayoutManager.HORIZONTAL, false)
+
+       categoryRecycler.layoutManager = manager
+
 
         categoryRecycler.layoutManager = manager
-        binding.categoryView.adapter = CategoryAdapter()
 
         // Inflate the layout for this fragment
         // Give binding access to ProjectViewModel
@@ -60,12 +69,17 @@ class  HomeFragment : Fragment() {
 
         val projectRecycler = binding.projectView
 
+
         val manager2: LinearLayoutManager =
             LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
 
         projectRecycler.layoutManager = manager2
 
 
+    binding.categoryView.adapter = CategoryAdapter(CategoryAdapter.CategoryListener { categoryId->
+//            Toast.makeText(context, "${categoryId}", Toast.LENGTH_LONG).show()
+        categoryViewModel.onCategoryClicked(categoryId)
+    })
         binding.projectView.adapter = ProjectAdapter()
 
 
