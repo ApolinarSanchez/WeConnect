@@ -1,4 +1,4 @@
-package com.cs5540.weconnect.ui.gallery
+package com.cs5540.weconnect.ui.myprojects
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.cs5540.weconnect.R
 
-class GalleryFragment : Fragment() {
+class MyProjectsFragment : Fragment() {
 
-    private lateinit var galleryViewModel: GalleryViewModel
+    private lateinit var myProjectsViewModel: MyProjectsViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        galleryViewModel =
-            ViewModelProviders.of(this).get(GalleryViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_gallery, container, false)
+        myProjectsViewModel =
+            ViewModelProviders.of(this).get(MyProjectsViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_myprojects, container, false)
         val textView: TextView = root.findViewById(R.id.text_gallery)
-        galleryViewModel.text.observe(this, Observer {
+        myProjectsViewModel.text.observe(this, Observer {
             textView.text = it
         })
         return root
