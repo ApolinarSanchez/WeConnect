@@ -9,7 +9,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 
-class ProjectAdapter(val catList: ArrayList<ProjectModel>): RecyclerView.Adapter<ProjectAdapter.ViewHolder>(){
+class ProjectAdapter(val catList: ArrayList<Project>): RecyclerView.Adapter<ProjectAdapter.ViewHolder>(){
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.name?.text = catList[position].name
