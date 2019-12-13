@@ -38,7 +38,6 @@ class  HomeFragment : Fragment() {
             inflater,
             R.layout.fragment_home, container, false
         )
-
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
         binding.setLifecycleOwner(this)
 
@@ -65,6 +64,7 @@ class  HomeFragment : Fragment() {
 
         // Inflate the layout for this fragment
         // Give binding access to ProjectViewModel
+        projectViewModel.getWeConnectProjects()
         binding.projectViewModel = projectViewModel
 
         val projectRecycler = binding.projectView

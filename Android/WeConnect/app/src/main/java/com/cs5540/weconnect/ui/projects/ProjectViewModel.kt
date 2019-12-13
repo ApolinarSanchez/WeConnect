@@ -10,26 +10,23 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-class ProjectViewModel : ViewModel() {
+class ProjectViewModel () : ViewModel() {
     private val _projects= MutableLiveData<List<Project>>()
     val projects : LiveData<List<Project>>
         get() = _projects
     private var projectViewModelJob = Job()
     private val coroutineScope = CoroutineScope(
         projectViewModelJob + Dispatchers.Main)
-    init {
-        getWeConnectProjects()
-    }
     /**
      * Sets the value of the status LiveData to the WeConnect projects.
      */
-    private fun getWeConnectProjects(){
+    public fun getWeConnectProjects(){
         coroutineScope.launch {
             var getProjectsDeferred = WeConnectApi.retrofitService.getProjects()
             try {
                 _projects.value = getProjectsDeferred.await()
 
-            } catch (e: Exception) {
+            } catch (e: Exception){
             }
         }
     }
@@ -41,6 +38,7 @@ class ProjectViewModel : ViewModel() {
             } catch (e: Exception) {
             }
         }
+
     }
     override fun onCleared() {
         super.onCleared()
