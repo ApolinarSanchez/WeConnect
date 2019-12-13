@@ -5,10 +5,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.cs5540.weconnect.network.WeConnectApi
+import com.google.gson.Gson
+import com.google.gson.JsonObject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+
 
 class ProfileViewModel () : ViewModel() {
     private val _profiles= MutableLiveData<List<Profile>>()
@@ -21,19 +24,32 @@ class ProfileViewModel () : ViewModel() {
     /**
      * Sets the value of the status LiveData to the WeConnect profiless.
      */
-    public fun getWeConnectProfiles(){
-        Log.d("profileViewModel","call")
+    fun getWeConnectProfiles(){
         coroutineScope.launch {
             var getProfilesDeferred = WeConnectApi.retrofitService.getProfiles()
             try {
                 _profiles.value = getProfilesDeferred.await()
-                Log.d("profileViewModel",_profiles.value.toString())
 
             } catch (e: Exception){
                 Log.d("profileViewModel",e.toString())
             }
         }
     }
+    fun getLogin(email:String,password:String){
+
+        val answer = JSONObject("""{"name":"test name", "age":25}""")
+
+        coroutineScope.launch {
+            var getProfilesDeferred = WeConnectApi.retrofitService.login(json)
+            try {
+                _profiles.value = getProfilesDeferred.await()
+                Log.d("profileViewModel",_profiles.value.toString())
+            } catch (e: Exception){
+                Log.d("profileViewModelError",e.toString())
+            }
+        }
+    }
+
     override fun onCleared() {
         super.onCleared()
         profileViewModelJob.cancel()

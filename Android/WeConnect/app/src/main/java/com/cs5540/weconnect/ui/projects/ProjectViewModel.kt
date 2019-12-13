@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.cs5540.weconnect.network.WeConnectApi
+import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -30,14 +31,14 @@ class ProjectViewModel () : ViewModel() {
             }
         }
     }
-    public fun getWeConnectProjectsInCategory(categoryId : String?){
+    public fun getWeConnectProjectsInCategory(categoryId : String){
         Log.d("ProjectViewModel",categoryId)
         coroutineScope.launch {
             var getProjectsDeferred = WeConnectApi.retrofitService.getProjectsByCategory(categoryId)
             try {
                 _projects.value = getProjectsDeferred.await()
                 Log.d("ProjectViewModel",_projects.value.toString())
-            } catch (e: Exception) {
+            } catch (e: Exception){
             }
             Log.d("ProjectViewModel", _projects.value.toString())
         }
