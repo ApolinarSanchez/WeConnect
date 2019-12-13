@@ -35,7 +35,7 @@ interface WeConnectApiService {
             Deferred<List<Project>>
     @GET("project/{categoryId}/category")
     fun getProjectsByCategory(
-        @Path("categoryId") categoryId : String):
+        @Path("categoryId") categoryId : String?):
             Deferred<List<Project>>
 }
 

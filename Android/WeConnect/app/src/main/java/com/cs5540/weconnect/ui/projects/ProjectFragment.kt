@@ -29,14 +29,14 @@ class  ProjectFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = DataBindingUtil.inflate<FragmentProjectBinding>(
-            inflater,
-            R.layout.fragment_project, container, false
-        )
+            inflater, R.layout.fragment_project, container, false)
+        val arguments = arguments?.let { ProjectFragmentArgs.fromBundle(it) }
+        val categoryId = arguments?.categoryId
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
         binding.setLifecycleOwner(this)
         // Inflate the layout for this fragment
         // Give binding access to ProjectViewModel
-        projectViewModel.getWeConnectProjectsInCategory("asd")
+        projectViewModel.getWeConnectProjectsInCategory(categoryId)
         binding.projectViewModel = projectViewModel
         val projectRecycler = binding.projectView
 

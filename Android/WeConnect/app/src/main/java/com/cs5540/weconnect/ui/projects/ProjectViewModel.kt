@@ -30,15 +30,16 @@ class ProjectViewModel () : ViewModel() {
             }
         }
     }
-    public fun getWeConnectProjectsInCategory(categoryId:String){
+    public fun getWeConnectProjectsInCategory(categoryId : String?){
+        Log.d("ProjectViewModel",categoryId)
         coroutineScope.launch {
             var getProjectsDeferred = WeConnectApi.retrofitService.getProjectsByCategory(categoryId)
             try {
                 _projects.value = getProjectsDeferred.await()
             } catch (e: Exception) {
             }
+            Log.d("ProjectViewModel", _projects.value.toString())
         }
-
     }
     override fun onCleared() {
         super.onCleared()
