@@ -1,6 +1,7 @@
 package com.cs5540.weconnect.network
 
 import com.cs5540.weconnect.ui.homepage.Category
+import com.cs5540.weconnect.ui.profile.Profile
 import com.cs5540.weconnect.ui.projects.Project
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
@@ -27,6 +28,9 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 interface WeConnectApiService {
+    @GET("user")
+    fun getProfiles():
+            Deferred<List<Profile>>
     @GET("category")
     fun getCategories():
             Deferred<List<Category>>
@@ -37,6 +41,7 @@ interface WeConnectApiService {
     fun getProjectsByCategory(
         @Path("categoryId") categoryId : String?):
             Deferred<List<Project>>
+
 }
 
 object WeConnectApi {
