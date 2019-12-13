@@ -38,6 +38,7 @@ class ProjectViewModel : ViewModel() {
             var getProjectsDeferred = WeConnectApi.retrofitService.getProjectsByCategory(categoryId)
             try {
                 _projects.value = getProjectsDeferred.await()
+                Log.d("ProjectViewModel",_projects.value.toString())
             } catch (e: Exception) {
             }
         }

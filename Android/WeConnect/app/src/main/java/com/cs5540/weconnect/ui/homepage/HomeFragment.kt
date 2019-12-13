@@ -59,9 +59,6 @@ class  HomeFragment : Fragment() {
 
        categoryRecycler.layoutManager = manager
 
-
-        categoryRecycler.layoutManager = manager
-
         // Inflate the layout for this fragment
         // Give binding access to ProjectViewModel
         binding.projectViewModel = projectViewModel
