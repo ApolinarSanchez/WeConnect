@@ -1,106 +1,49 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2018, The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <data>
+        <variable
+            name="profileViewModel"
+            type="com.cs5540.weconnect.ui.profile.ProfileViewModel" />
+    </data>
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:context=".ProfileFragment">
-
-
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.profile.ProfileFragment">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:context=".ProfileFragment">
-
+            android:layout_height="match_parent">
             <androidx.cardview.widget.CardView
-                android:id="@+id/pro_pic"
-                style="@style/pro_pic_card"
-                card_view:cardCornerRadius="10dp">
-
-                <ImageView
-                    android:id="@+id/pro_pic_image"
+                android:id="@+id/profiles_card"
+                android:layout_width="350dp"
+                android:layout_height="675dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="6dp">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/profile_view"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/pro_pic" />
-
+                    android:background="@android:color/darker_gray"
+                    app:profileData="@{profileViewModel.profiles}"/>
             </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:id="@+id/user_name"
-                android:layout_width="200dp"
-                android:layout_height="48dp"
-                android:layout_below="@id/pro_pic"
-                android:layout_centerInParent="true"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="15dp"
-                android:textSize="25sp"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                android:text="@string/user_name" />
-
-            <TextView
-                android:id="@+id/user_position"
-                android:layout_width="120dp"
-                android:layout_height="24dp"
-                android:background="#FFFFFF"
-                android:layout_below="@id/user_name"
-                android:layout_centerInParent="true"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="15dp"
-                android:gravity="center"
-                android:text="@string/user_position" />
-
-            <TextView
-                android:id="@+id/bio_title"
-                android:layout_width="wrap_content"
-                android:layout_height="33dp"
-                android:layout_below="@id/user_position"
-                android:layout_marginTop="8dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:text="@string/bio_title"
-                android:textColor="#000000"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/bio_description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/bio_title"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:text="@string/bio_description"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/projects_header"
-                android:layout_width="wrap_content"
-                android:layout_height="33dp"
-                android:layout_below="@id/bio_description"
-                android:layout_marginTop="8dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:text="@string/projects_header"
-                android:textColor="#000000"
-                android:textSize="24sp" />
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="399dp"
-                android:layout_below="@+id/projects_header"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginBottom="5dp">
-
-            </androidx.cardview.widget.CardView>
-
         </RelativeLayout>
     </ScrollView>
 </layout>
