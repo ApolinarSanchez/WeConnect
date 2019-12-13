@@ -19,7 +19,9 @@ import com.cs5540.weconnect.databinding.FragmentProjectBinding
 import com.cs5540.weconnect.ui.homepage.ProjectAdapter
 import com.cs5540.weconnect.ui.projects.ProjectViewModel
 
+
 class  ProjectFragment: Fragment(){
+
     private val projectViewModel: ProjectViewModel by lazy {
         ViewModelProviders.of(this).get(ProjectViewModel::class.java)
     }
