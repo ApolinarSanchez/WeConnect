@@ -5,12 +5,10 @@ Gigstarters for students has been untapped for far too long. With these tools in
 
 ## Show your support
 
-Give a ⭐️ if this project helped you!
-![Homepage](3DTest.png)
 
-![Test Image 2](https://github.com/ApolinarSanchez/WeConnect/blob/adesh/Android/WeConnect/Screen%20Shot%202019-12-12%20at%206.04.58%20PM.png)
 
-![Test Image 3](/3DTest.png)
+![Test Image 2](https://github.com/ApolinarSanchez/WeConnect/blob/adesh/Android/WeConnect/Screen%20Shot%202019-12-12%20at%206.04.58%20PM.png | height=200)
+
 
 ***
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
