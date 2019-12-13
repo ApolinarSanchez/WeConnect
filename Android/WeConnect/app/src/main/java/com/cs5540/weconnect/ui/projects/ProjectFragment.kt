@@ -1,6 +1,7 @@
 package com.cs5540.weconnect.ui.projects
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -18,16 +19,10 @@ import com.cs5540.weconnect.databinding.FragmentProjectBinding
 import com.cs5540.weconnect.ui.homepage.ProjectAdapter
 import com.cs5540.weconnect.ui.projects.ProjectViewModel
 
-
-class  ProjectFragment : Fragment() {
-
-    /**
-     * Lazily initialize our CategoryViewModel.
-     */
+class  ProjectFragment: Fragment() {
     private val projectViewModel: ProjectViewModel by lazy {
         ViewModelProviders.of(this).get(ProjectViewModel::class.java)
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,7 +31,6 @@ class  ProjectFragment : Fragment() {
             inflater, R.layout.fragment_project, container, false)
         val arguments = arguments?.let { ProjectFragmentArgs.fromBundle(it) }
         val categoryId = arguments?.categoryId
-
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
         binding.setLifecycleOwner(this)
         projectViewModel.getWeConnectProjectsInCategory(categoryId.toString())
@@ -46,15 +40,12 @@ class  ProjectFragment : Fragment() {
 
         val projectRecycler = binding.projectView
 
-
         val manager2: LinearLayoutManager =
             LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
 
         projectRecycler.layoutManager = manager2
 
-
         binding.projectView.adapter = ProjectAdapter()
-
 
         return binding.root
     }
