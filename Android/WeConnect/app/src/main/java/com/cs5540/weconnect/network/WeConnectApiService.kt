@@ -7,6 +7,8 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import kotlinx.coroutines.Deferred
 
+import retrofit2.Callback
+
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
@@ -33,7 +35,7 @@ interface WeConnectApiService {
             Deferred<List<Project>>
     @GET("project/{categoryId}/category")
     fun getProjectsByCategory(
-        @Path("categoryId") categoryId : String):
+        @Path("categoryId") categoryId : String?):
             Deferred<List<Project>>
 }
 
