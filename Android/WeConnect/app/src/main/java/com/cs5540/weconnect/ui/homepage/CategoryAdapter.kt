@@ -3,13 +3,15 @@ package com.cs5540.weconnect.ui.homepage
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.cs5540.weconnect.databinding.CategoryItemLayoutBinding
-class CategoryAdapter : ListAdapter<Category, CategoryAdapter.ViewHolder>(DiffCallback) {
+class CategoryAdapter(val clickListener: CategoryAdapter.CategoryListener) : ListAdapter<Category, CategoryAdapter.ViewHolder>(DiffCallback) {
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val category = getItem(position)
-        holder.bind(category)
+        holder.bind(category, clickListener)
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
@@ -17,8 +19,12 @@ class CategoryAdapter : ListAdapter<Category, CategoryAdapter.ViewHolder>(DiffCa
     }
 
    class ViewHolder(private var binding: CategoryItemLayoutBinding): RecyclerView.ViewHolder(binding.root){
-        fun bind(category: Category) {
+        fun bind(
+            category: Category,
+            clickListener: CategoryListener
+        ) {
             binding.category = category
+            binding.clickListener = clickListener
             binding.executePendingBindings()
         }
     }
@@ -33,4 +39,9 @@ class CategoryAdapter : ListAdapter<Category, CategoryAdapter.ViewHolder>(DiffCa
         }
 
     }
+
+    class CategoryListener(val clickListener: (categoryId: String) -> Unit) {
+        fun onClick(category: Category) = clickListener(category.categoryId)
+    }
 }
+
