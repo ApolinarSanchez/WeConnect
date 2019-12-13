@@ -7,7 +7,7 @@ Gigstarters for students has been untapped for far too long. With these tools in
 
 
 
-![Test Image 2](https://github.com/ApolinarSanchez/WeConnect/blob/adesh/Android/WeConnect/Screen%20Shot%202019-12-12%20at%206.04.58%20PM.png | height=200)
+![Homepage](https://github.com/ApolinarSanchez/WeConnect/blob/adesh/Android/WeConnect/DemoImages/Homepage.png | height=200)
 
 
 ***
