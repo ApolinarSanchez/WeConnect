@@ -32,8 +32,12 @@ class  ProfileFragment: Fragment(){
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
         binding.setLifecycleOwner(this)
 
+
+
+
         //profileViewModel.getWeConnectProfiles()
-        profileViewModel.getLogin("john1@gmail.com","123456")
+        profileViewModel.loginUser("john1@gmail.com","123456");
+        //profileViewModel.getLogin("john1@gmail.com","123456")
         // Inflate the layout for this fragment
         // Give binding access to ProfileViewModel
         binding.profileViewModel = profileViewModel
