@@ -10,10 +10,28 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_nav_home_to_nav_project"
+            android:id="@+id/action_nav_home_to_projectFragment"
             app:destination="@id/nav_project" />
     </fragment>
 
+    <fragment
+        android:id="@+id/nav_login"
+        android:name="com.cs5540.weconnect.ui.login.LoginFragment"
+        android:label="@string/login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/loginUser"
+            app:destination="@id/nav_home"/>
+    </fragment>
+    <fragment
+        android:id="@+id/nav_sign_up"
+        android:name="com.cs5540.weconnect.ui.signUp.SignUpFragment"
+        android:label="@string/sign_up"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/signUpUser"
+            app:destination="@id/nav_home"/>
+    </fragment>
     <fragment
         android:id="@+id/nav_myprojects"
         android:name="com.cs5540.weconnect.ui.myprojects.MyProjectsFragment"
@@ -47,9 +65,5 @@
     <fragment
         android:id="@+id/nav_project"
         android:name="com.cs5540.weconnect.ui.projects.ProjectFragment"
-        android:label="ProjectFragment">
-        <argument
-            android:name="categoryId"
-            app:argType="string" />
-    </fragment>
+        android:label="ProjectFragment" />
 </navigation>

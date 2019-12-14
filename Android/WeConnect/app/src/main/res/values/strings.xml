@@ -27,9 +27,17 @@
     <string name="user_name">We User</string>
     <string name="user_position">UI/UX Designer</string>
     <string name="bio_title">Bio</string>
+    <string name="email_hint">email</string>
+    <string name="password_hint">password</string>
     <string name="bio_description">Lorem ipsum, or lipsum as it is sometimes known,
         is dummy text used in laying out print, graphic or web designs.
         The passage is attributed to an unknown typesetter in the
         15th century who is thought to have scrambled.</string>
+
+
+<!--    Navigation label identifiers -->
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="lets_go">Let\'s Go</string>
 
 </resources>
