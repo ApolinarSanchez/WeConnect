@@ -38,6 +38,8 @@ android {
 }
 
 dependencies {
+    implementation 'org.glassfish:javax.annotation:10.0-b28'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
@@ -57,9 +59,11 @@ dependencies {
     implementation "com.squareup.moshi:moshi-kotlin:$version_moshi"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version_kotlin_coroutines"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version_kotlin_coroutines"
+    implementation 'com.google.code.gson:gson:2.8.6'
 
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
 
     implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$version_retrofit_coroutines_adapter"
     testImplementation 'junit:junit:4.12'
