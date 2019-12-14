@@ -33,17 +33,17 @@ class ProfileViewModel () : ViewModel() {
     /**
      * Sets the value of the status LiveData to the WeConnect profiless.
      */
-    fun getWeConnectProfiles(){
-        coroutineScope.launch {
-            var getProfilesDeferred = WeConnectApi.retrofitService.getProfiles()
-            try {
-                _profiles.value = getProfilesDeferred.await()
-
-            } catch (e: Exception){
-                Log.d("profileViewModel",e.toString())
-            }
-        }
-    }
+//    fun getWeConnectProfiles(){
+//        coroutineScope.launch {
+//            var getProfilesDeferred = WeConnectApi.retrofitService.getProfiles()
+//            try {
+//                _profiles.value = getProfilesDeferred.await()
+//
+//            } catch (e: Exception){
+//                Log.d("profileViewModel",e.toString())
+//            }
+//        }
+//    }
 //    fun getLogin(email:String,password:String){
 //
 //        //val answer = JSONObject("""{"name":"test name", "age":25}""")
