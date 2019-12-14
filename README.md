@@ -22,6 +22,5 @@ Gigstarters for students has been untapped for far too long. With these tools in
 
 <img width="200" alt="portfolio_view" src="https://github.com/ApolinarSanchez/WeConnect/blob/adesh/Android/WeConnect/DemoImages/Project_Page_admin.png">
 
-<img width="200" alt="portfolio_view" src="https://github.com/ApolinarSanchez/WeConnect/blob/adesh/Android/WeConnect/DemoImages/Projects.png">
 
 
