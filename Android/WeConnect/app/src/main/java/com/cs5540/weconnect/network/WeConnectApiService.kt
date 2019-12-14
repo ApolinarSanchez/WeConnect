@@ -4,11 +4,15 @@ import android.util.Log
 import com.cs5540.weconnect.ui.homepage.Category
 import com.cs5540.weconnect.ui.profile.Profile
 import com.cs5540.weconnect.ui.projects.Project
+import com.google.gson.JsonObject
+import com.google.gson.annotations.SerializedName
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import kotlinx.coroutines.Deferred
 import com.squareup.moshi.Json
+import com.squareup.moshi.ToJson
+import okhttp3.RequestBody
 import org.json.JSONObject
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -25,12 +29,8 @@ private val retrofit = Retrofit.Builder()
     .addCallAdapterFactory(CoroutineCallAdapterFactory())
     .baseUrl(BASE_URL)
     .build()
-data class Credential(var email: String, var password:String){
-    fun getDetail():String{
-        var result : String = email + password
-        return result;
-    }
-}
+data class Credential(@SerializedName("email")var email: String,
+                      @SerializedName("password")var password:String)
 interface WeConnectApiService {
     @GET("user")
     fun getProfiles():
@@ -49,7 +49,8 @@ interface WeConnectApiService {
         "Content-Type: application/json"
     )
     @POST("user/signin")
-    fun login(@Body body:JSONObject):
+    @ToJson
+    fun login(@Body body:Credential):
             Deferred<List<Profile>>
 }
 object WeConnectApi {
