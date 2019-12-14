@@ -1,4 +1,4 @@
-package com.cs5540.weconnect.ui.login
+package com.cs5540.weconnect.ui.signUp
 
 import android.app.Application
 import android.view.View
@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModel
 import com.cs5540.weconnect.util.NotificationHelper
 import java.util.*
 
-class LoginViewModel(val app: Application) : AndroidViewModel(app) {
+class SignUpViewModel(val app: Application) : AndroidViewModel(app) {
 
     var loading = ObservableField(View.GONE)
 
@@ -29,7 +29,7 @@ class LoginViewModel(val app: Application) : AndroidViewModel(app) {
     }
     val text: LiveData<String> = _text
 
-    fun login() {
+    fun signUp() {
         loading.set(1)
 //        user = makeACallToGetUser(email, password)
         loading.set(0)
