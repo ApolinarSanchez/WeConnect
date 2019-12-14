@@ -54,7 +54,7 @@ class NotificationHelper(val context: Context) {
         return NotificationCompat.Builder(context, CHANNEL_ID_USER)
             .setContentTitle("Another day, another moment to hustle!")
             .setContentText(contentText)
-//            .setSmallIcon(R.drawable.ic_notification)
+            .setSmallIcon(R.drawable.ic_cake)
             .setAutoCancel(true)
             .setStyle(
                 NotificationCompat.BigTextStyle()

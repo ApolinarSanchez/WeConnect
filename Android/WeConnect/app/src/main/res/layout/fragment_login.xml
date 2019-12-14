@@ -11,7 +11,7 @@ xmlns:tools="http://schemas.android.com/tools">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.signUp.SignUpFragment"
+        tools:context=".ui.login.LoginFragment"
         android:background="@drawable/gradient">
 
         <TextView

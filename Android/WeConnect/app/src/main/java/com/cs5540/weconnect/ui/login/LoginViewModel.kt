@@ -21,14 +21,15 @@ import retrofit2.Response
 import java.util.*
 
 class LoginViewModel(val app: Application) : AndroidViewModel(app) {
-    var loading = ObservableField(1)
+    var loading = ObservableField(0)
 
     private val _currentProfile= MutableLiveData<Profile>()
     val currentProfile : LiveData<Profile>
         get() = _currentProfile
 
-    var email = ObservableField("")
+    var email = ObservableField("HERRO")
     var password = ObservableField("")
+
 
     //    private val gson by lazy { Gson() }
     private val notificationHelper by lazy { NotificationHelper(app) }
@@ -37,16 +38,19 @@ class LoginViewModel(val app: Application) : AndroidViewModel(app) {
 
 //    var user: LiveData<Profile> = g
 
+
     private val _text = MutableLiveData<String>().apply {
         value = "This is profile Fragment"
     }
     val text: LiveData<String> = _text
 
     fun login() {
-        Log.d("email", "Email it ${email.get()}")
-        Log.d("passworrd", "password is ${password.get()}")
         loading.set(0)
-        loginUser(email.get()!!, password.get()!!)
+        if (email.get() != null)
+            loginUser(email.get()!!, password.get()!!)
+        else {
+            print("Null email")
+        }
         loading.set(1)
     }
 
@@ -55,6 +59,8 @@ class LoginViewModel(val app: Application) : AndroidViewModel(app) {
     }
 
     private fun loginUser(email: String,password : String) {
+        Log.d("email", "Email it $email")
+        Log.d("passworrd", "password is $password")
         RetrofitClient.instance.userLogin(email, password)
             .enqueue(object: Callback<LoginResponse> {
                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
@@ -71,7 +77,6 @@ class LoginViewModel(val app: Application) : AndroidViewModel(app) {
                         System.out.println("Failed: "+response.body());
 
                     }
-
                 }
             })
     }
