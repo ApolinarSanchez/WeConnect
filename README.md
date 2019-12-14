@@ -3,9 +3,18 @@
 Gigstarters for students has been untapped for far too long. With these tools in student’s hands, we’re going to see immersive experiences that will elevate, engage, and inspire people everywhere to become an entrepreneurs. We're excited to start your journey in seeking out other like minded individuals that share your dreams and passion for building your idea to scale.
 </p>
 
-
+* Home page -> Project Categories
+  * Pulling data from firebase backend
+  * Recyclerview
+    * Uses Linearlayout with cardview
+    * GridLayoutManager -> Horizontal, spanCount=2
+  * ClickListener on categories leads to all projects in that category
 
 <img width="200" alt="portfolio_view" src="https://github.com/ApolinarSanchez/WeConnect/blob/adesh/Android/WeConnect/DemoImages/Homepage.png">
+
+* Home page -> Projects
+  * Recyclerview -> All currently active projects
+
 
 <img width="200" alt="portfolio_view" src="https://github.com/ApolinarSanchez/WeConnect/blob/adesh/Android/WeConnect/DemoImages/Homepage2.png">
 
