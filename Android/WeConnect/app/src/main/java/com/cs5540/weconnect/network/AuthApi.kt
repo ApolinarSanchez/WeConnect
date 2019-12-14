@@ -1,5 +1,6 @@
 package com.cs5540.weconnect.network
 
+import android.util.Log
 import com.cs5540.weconnect.ui.profile.Profile
 import retrofit2.Call
 import retrofit2.http.Field
@@ -18,7 +19,7 @@ interface AuthApi {
     ):Call<DefaultResponse>
 
     @FormUrlEncoded
-    @POST("user/signin")
+    @POST("user/signIn")
     fun userLogin(
         @Field("email") email:String,
         @Field("password") password: String

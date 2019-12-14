@@ -98,7 +98,7 @@ interface WeConnectApiService {
 //            Deferred<List<Profile>>
 
     @FormUrlEncoded
-    @POST("user/signin")
+    @POST("user/signIn")
     fun userLogin(
         @Field("email") email:String,
         @Field("password") password: String

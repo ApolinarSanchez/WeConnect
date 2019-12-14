@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-
+<layout
+xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools">
-
-    <data>
-        <variable
-            name="viewModel"
-            type="com.cs5540.weconnect.ui.login.LoginViewModel"/>
-    </data>
-
+<data>
+    <variable
+        name="viewModel"
+        type="com.cs5540.weconnect.ui.login.LoginViewModel"/>
+</data>
     <androidx.constraintlayout.widget.ConstraintLayout
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".ui.login.LoginFragment"
+        tools:context=".ui.signUp.SignUpFragment"
         android:background="@drawable/gradient">
 
         <TextView
@@ -55,7 +50,7 @@ xmlns:tools="http://schemas.android.com/tools">
             android:inputType="textEmailAddress"
             android:maxLines="1"
             android:text="@={viewModel.email}"
-        />
+            />
 
         <EditText
             android:id="@+id/password"
@@ -65,7 +60,7 @@ xmlns:tools="http://schemas.android.com/tools">
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/email"
-            app:layout_constraintBottom_toTopOf="@id/loginButton"
+            app:layout_constraintBottom_toTopOf="@id/login_button"
             android:layout_marginBottom="@dimen/margin_large"
             android:elevation="2dp"
 
@@ -76,10 +71,10 @@ xmlns:tools="http://schemas.android.com/tools">
             android:hint="@string/password_hint"
             android:maxLines="1"
             android:text="@={viewModel.password}"
-        />
+            />
 
         <Button
-            android:id="@+id/loginButton"
+            android:id="@+id/login_button"
 
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -95,7 +90,6 @@ xmlns:tools="http://schemas.android.com/tools">
             android:foregroundTint="@color/colorPrimary"
             android:textStyle="bold"
             android:elevation="5dp"
-            android:visibility="@{safeUnbox(viewModel.loading)"
             />
         <ProgressBar
             android:id="@+id/progress_status"
@@ -105,7 +99,7 @@ xmlns:tools="http://schemas.android.com/tools">
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/loginButton" />
+            app:layout_constraintTop_toBottomOf="@id/login_button" />
 
         <Button
             android:id="@+id/go_to_sign_up"
@@ -117,13 +111,14 @@ xmlns:tools="http://schemas.android.com/tools">
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:background="@drawable/rounded_accent"
-            android:text="@string/sign_up"
+            android:text="@string/login"
             android:textSize="@dimen/text_size_medium"
             android:foregroundTint="@color/colorPrimary"
             android:textStyle="bold"
             android:elevation="5dp"
-            android:visibility="@{safeUnbox(!viewModel.loading)"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
+
+

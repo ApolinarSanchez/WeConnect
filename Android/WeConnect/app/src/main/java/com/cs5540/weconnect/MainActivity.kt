@@ -1,6 +1,7 @@
 package com.cs5540.weconnect
 
 import android.os.Bundle
+import android.util.Log
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import androidx.navigation.findNavController
@@ -13,21 +14,30 @@ import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.NavController
-import androidx.navigation.NavGraph
+import com.cs5540.weconnect.databinding.ActivityMainBinding
+import com.cs5540.weconnect.databinding.NavHeaderMainBinding
 import com.cs5540.weconnect.ui.login.LoginViewModel
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private val navController by lazy { findNavController(R.id.nav_host_fragment) }
+    private var loginViewModel: LoginViewModel? = null
+    private lateinit var headerBinding: NavHeaderMainBinding
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        setupDataBinding()
+        setupViewModel()
+//        setContentView(R.layout.activity_main)
+
+
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+
 
         val fab: FloatingActionButton = findViewById(R.id.fab)
         fab.setOnClickListener { view ->
@@ -39,12 +49,15 @@ class MainActivity : AppCompatActivity() {
 //        val navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
+
+
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_home, R.id.nav_myprojects, R.id.nav_slideshow,
                 R.id.nav_tools, R.id.nav_share, R.id.nav_send
             ), drawerLayout
         )
+
         setupActionBarWithNavController(navController, appBarConfiguration)
 //        setupViewModel(navController)
         navView.setupWithNavController(navController)
@@ -60,17 +73,28 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-//    private fun setupViewModel(navController: NavController) {
-//        try {
-//            val viewModelProvider = ViewModelProvider(
-//                navController.getViewModelStoreOwner(R.id.mobile_navigation),
-//                ViewModelProvider.AndroidViewModelFactory(application)
-//            )  //1
-//            loginViewModel = viewModelProvider.get(LoginViewModel::class.java)  //2
-////            headerBinding.viewModel = lettersViewModel  //3
-////            lettersViewModel?.loadProfile()  //4
-//        } catch (e: IllegalArgumentException) {  //5
-//            e.printStackTrace()
-//        }
-//    }
+    private fun setupDataBinding() {
+        val activityMainBinding =
+            DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+
+        headerBinding = DataBindingUtil.inflate(
+            layoutInflater, R.layout.nav_header_main, activityMainBinding.navView, false
+        )
+
+
+        activityMainBinding.navView.addHeaderView(headerBinding.root)
+    }
+
+    private fun setupViewModel() {
+        try {
+            val viewModelProvider = ViewModelProvider(
+                navController.getViewModelStoreOwner(R.id.mobile_navigation),
+                ViewModelProvider.AndroidViewModelFactory(application)
+            )  //1
+            loginViewModel = viewModelProvider.get(LoginViewModel::class.java)
+            headerBinding.viewModel = loginViewModel
+        } catch (e: IllegalArgumentException) {
+            e.printStackTrace()
+        }
+    }
 }

@@ -49,7 +49,7 @@ class  HomeFragment : Fragment() {
         categoryViewModel.navigateToProjects.observe(this, Observer {category ->
             category?.let {
                 this.findNavController().navigate(
-                    HomeFragmentDirections.actionNavHomeToNavProject(category))
+                    HomeFragmentDirections.actionNavHomeToProjectFragment())
                 categoryViewModel.onProjectsNavigated()
             }
         })

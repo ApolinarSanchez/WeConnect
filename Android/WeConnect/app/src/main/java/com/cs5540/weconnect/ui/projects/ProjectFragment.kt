@@ -31,8 +31,10 @@ class  ProjectFragment: Fragment(){
     ): View? {
         val binding = DataBindingUtil.inflate<FragmentProjectBinding>(
             inflater, R.layout.fragment_project, container, false)
-        val arguments = arguments?.let { ProjectFragmentArgs.fromBundle(it) }
-        val categoryId = arguments?.categoryId
+        val arguments = ""
+//        arguments?.let { ProjectFragmentArgs.fromBundle(it) }
+        val categoryId = ""
+//            arguments?.categoryId
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
         binding.setLifecycleOwner(this)
         projectViewModel.getWeConnectProjectsInCategory(categoryId.toString())

@@ -25,7 +25,7 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
 
         sign_up_button.setOnClickListener {
             signUpViewModel.signUp()
-            handleSend { signUpViewModel.sendPushNotification() }
+//            handleSend { signUpViewModel.sendPushNotification() }
 
             hideKeyboard()
         }
@@ -47,13 +47,13 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
 //        }
     }
 
-    private fun handleSend(toSend: () -> Unit) {
-        if (signUpViewModel.user) {
-            toSend()
-            findNavController().navigate(R.id.nav_home)
-        } else {
-            Toast.makeText(activity?.applicationContext, "Network error", Toast.LENGTH_SHORT).show()
-        }
-        hideKeyboard()
-    }
+//    private fun handleSend(toSend: () -> Unit) {
+//        if (signUpViewModel.user) {
+//            toSend()
+//            findNavController().navigate(R.id.nav_home)
+//        } else {
+//            Toast.makeText(activity?.applicationContext, "Network error", Toast.LENGTH_SHORT).show()
+//        }
+//        hideKeyboard()
+//    }
 }

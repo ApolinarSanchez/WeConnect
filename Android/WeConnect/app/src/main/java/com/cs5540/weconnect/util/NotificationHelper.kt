@@ -11,7 +11,10 @@ import androidx.core.app.NotificationCompat
 import androidx.navigation.NavDeepLinkBuilder
 import com.google.gson.Gson
 import com.cs5540.weconnect.R
-import com.cs5540.android.model.User
+import com.cs5540.weconnect.ui.profile.Profile
+import com.cs5540.weconnect.ui.projects.Project
+
+//import com.cs5540.android.model.User
 
 class NotificationHelper(val context: Context) {
 
@@ -24,9 +27,9 @@ class NotificationHelper(val context: Context) {
 
     private val gson by lazy { Gson() }
 
-    fun sendLocalNotification(letter: USER) {
-        val pendingIntent = buildPendingIntentFromNavigation(letter)
-        val notification = buildLetterNotification(letter, pendingIntent!!)
+    fun sendLocalNotification(profile: Profile) {
+        val pendingIntent = buildPendingIntentFromNavigation(profile)
+        val notification = buildLetterNotification(profile, pendingIntent!!)
 
         val notificationManager =
             context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
@@ -44,10 +47,10 @@ class NotificationHelper(val context: Context) {
     }
 
     private fun buildLetterNotification(
-        user: User,
+        user: Profile,
         pendingIntent: PendingIntent
     ): Notification? {
-        val contentText = "Welcome back ${user.name}!"
+        val contentText = "Welcome back ${user.userName}!"
         return NotificationCompat.Builder(context, CHANNEL_ID_USER)
             .setContentTitle("Another day, another moment to hustle!")
             .setContentText(contentText)
@@ -64,7 +67,7 @@ class NotificationHelper(val context: Context) {
             .build()
     }
 
-    private fun buildPendingIntentFromNavigation(user: User): PendingIntent? {
+    private fun buildPendingIntentFromNavigation(user: Profile): PendingIntent? {
         val bundle = Bundle()
         bundle.putString(EXTRA_USER, gson.toJson(user))
         return NavDeepLinkBuilder(context)
